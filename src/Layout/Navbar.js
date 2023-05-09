@@ -1,9 +1,11 @@
 import { useDispatch } from "react-redux"
-
+import {useNavigate}  from 'react-router-dom'
 
 
 
 function Navbar(){
+
+  const navigate = useNavigate()
 
 
   const dispatch = useDispatch()
@@ -19,14 +21,12 @@ function Navbar(){
     <a class="navbar-brand" href="#">Hidden brand</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" onClick={()=> navigate('/home')}>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" onClick={()=> navigate('/about')}>About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+     
     </ul>
     {/* <form class="form-inline my-2 my-lg-0"> */}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />

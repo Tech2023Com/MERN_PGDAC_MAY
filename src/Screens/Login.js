@@ -1,7 +1,11 @@
 import { useState } from "react"
 
+import {useDispatch} from 'react-redux'
+
 
 function Login(){
+
+  const dispatch = useDispatch()
 
     var [values , setValues] =  useState({
         email : "",
@@ -19,8 +23,10 @@ function Login(){
         e.preventDefault()
         console.log(values)
 
-        localStorage.setItem('auth' ,  values.email)
-        window.location.reload()
+        dispatch({type : "LOGIN" ,  data : values.email})
+
+        // localStorage.setItem('auth' ,  values.email)
+        // window.location.reload()
     }
 
 

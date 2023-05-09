@@ -2,6 +2,7 @@ import AllRoutes from "./All-Routes";
 import AuthRoutes from "./Auth-Routes";
 import Navbar from "../Layout/Navbar";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
 
@@ -11,13 +12,16 @@ import { useState } from "react";
 
 function MainRouting(){
 
-    var [auth ,  setAuth ] =  useState(false)
+    // var [auth ,  setAuth ] =  useState(false)
+
+
+    var auth = useSelector((state)=> state.Counter.auth)
 
 
     return(
         <>
 
-        {localStorage.getItem('auth') == 'bhanu@gmail.com' ?
+        {auth == 'bhanu@gmail.com' ?
         <>
         <Navbar/>
         <AllRoutes />

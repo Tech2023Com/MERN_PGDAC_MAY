@@ -1,9 +1,12 @@
+import { useDispatch } from "react-redux"
 
 
 
 
 function Navbar(){
 
+
+  const dispatch = useDispatch()
 
     return(
         <>
@@ -25,10 +28,10 @@ function Navbar(){
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    {/* <form class="form-inline my-2 my-lg-0"> */}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-      <button onClick={()=> {localStorage.removeItem('auth')}} class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-    </form>
+      <button onClick={()=> {dispatch({type : "LOGOUT" , data : null})}} class="btn btn-outline-success my-2 my-sm-0" >Logout</button>
+    {/* </form> */}
   </div>
 </nav>        
         

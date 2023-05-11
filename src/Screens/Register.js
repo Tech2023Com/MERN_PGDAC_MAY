@@ -8,7 +8,7 @@ import {Base_URL_User} from '../Config/BaseUrl'
 import {useNavigate} from 'react-router-dom'
 
 
-function Login(){
+function Login({ftgd}){
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -55,6 +55,7 @@ function Login(){
             axios.post(Base_URL_User + 'message'  ,values ).then((res)=>{
                 console.log(res.data)
                 toast.success(res.data.message)
+                ftgd()
                 if(res.data.status  == 200 )
                 {
                     navigate('/login')

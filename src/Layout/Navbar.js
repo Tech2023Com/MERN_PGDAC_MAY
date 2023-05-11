@@ -26,6 +26,9 @@ function Navbar(){
       <li class="nav-item">
         <a class="nav-link" onClick={()=> navigate('/about')}>About</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" onClick={()=> navigate('/demo')}>Demo</a>
+      </li>
      
     </ul>
     {/* <form class="form-inline my-2 my-lg-0"> */}

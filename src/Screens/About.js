@@ -6,6 +6,8 @@ import {useNavigate} from 'react-router-dom'
 import '../Styles/About.css'
 
 
+
+
 function About(){
 
     const navigate = useNavigate()
@@ -16,7 +18,7 @@ function About(){
 
         useEffect(()=>{
 
-            fetch('https://jsonplaceholder.typicode.com/todos').then(res => res.json()).then((result)=>{
+            fetch('http://localhost:9877/todos').then(res => res.json()).then((result)=>{
                 console.log(result)
                 setData(result)
             })

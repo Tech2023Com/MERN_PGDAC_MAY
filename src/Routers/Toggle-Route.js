@@ -21,7 +21,7 @@ function MainRouting(){
     return(
         <>
 
-        {auth == 'bhanu@gmail.com' ?
+        { auth &&  auth != 'undefined' && auth != null && auth != "" ?
         <>
         <Navbar/>
         <AllRoutes />
